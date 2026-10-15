@@ -100,7 +100,7 @@ html[dir=ltr] .ct{direction:ltr;text-align:left}
 </section>
 <section id="list"></section>
 <section class="cds">
-<a class="cd r" href="#" style="--cc:var(--ember);--cg:rgba(255,90,31,.2);--glow:rgba(255,90,31,.55);--px:15%"><div class="cfp" data-h="18" data-seed="7" data-kind="0"><canvas class="fp" role="img" aria-label="Digital fingerprint"></canvas></div><div class="ct" data-i="c1"></div><svg class="ar" viewBox="0 0 100 60"><path d="M6 30H92M68 8l24 22-24 22"/></svg></a>
+<a class="cd r" href="blog.html" style="--cc:var(--ember);--cg:rgba(255,90,31,.2);--glow:rgba(255,90,31,.55);--px:15%"><div class="cfp" data-h="18" data-seed="7" data-kind="0"><canvas class="fp" role="img" aria-label="Digital fingerprint"></canvas></div><div class="ct" data-i="c1"></div><svg class="ar" viewBox="0 0 100 60"><path d="M6 30H92M68 8l24 22-24 22"/></svg></a>
 <a class="cd l" href="#" style="--cc:var(--cyan);--cg:rgba(94,230,255,.18);--glow:rgba(94,230,255,.5);--px:85%"><svg class="ar" viewBox="0 0 100 60"><path d="M94 30H8M32 8L8 30l24 22"/></svg><div class="ct" data-i="c2"></div><div class="cfp" data-h="195" data-seed="13" data-kind="2"><canvas class="fp" role="img" aria-label="Digital fingerprint"></canvas></div></a>
 </section>
 </main>
@@ -329,7 +329,7 @@ letters.forEach((c,i)=>{c.animate(cols.map((col,k)=>({color:col,transform:`persp
 await sleep(1500+letters.length*55+80)}
 const teeth=(a0,a1,n)=>{let d='';for(let i=0;i<n;i++){const a=(a0+(a1-a0)*(i+.5)/n)*Math.PI/180,w=(a1-a0)/n*.46*Math.PI/180,p=(g,r)=>(200+Math.cos(g)*r).toFixed(1)+','+(200+Math.sin(g)*r).toFixed(1),len=36+(i%2?14:0)+(Math.abs(i-n/2+.5)<1.6?18:0);d+=`<polygon points="${p(a-w,124)} ${p(a+w,124)} ${p(a,124-len)}"/>`}return d};
 async function panic(){
-const o=letters[1],r=o.getBoundingClientRect(),vw=innerWidth,vh=innerHeight,size=Math.max(vw,vh)*1.25,base=ink();
+const o=letters.find(c=>c.textContent==='O')||letters[1],r=o.getBoundingClientRect(),vw=innerWidth,vh=innerHeight,size=Math.max(vw,vh)*1.25,base=ink();
 const sx=r.left+r.width/2-vw/2,sy=r.top+r.height/2-vh/2,s0=Math.max(r.width,r.height)/size;
 const w=document.createElement('div');w.className='bigO';
 w.style.cssText=`width:${size}px;height:${size}px;left:${(vw-size)/2}px;top:${(vh-size)/2}px`;
