@@ -99,6 +99,11 @@ html[dir=ltr] .ct{direction:ltr;text-align:left}
 .pt h2{font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.2;margin:0 0 .8rem;letter-spacing:-.01em}
 .pt p{margin:0 0 .9rem;line-height:1.8;color:var(--steel);font-size:1.02rem}
 .pt p:last-child{margin:0}
+.pt h3{font-size:1.2rem;margin:1.6rem 0 .6rem}
+.pt h4{font-size:1.02rem;margin:1.2rem 0 .4rem;color:var(--ember)}
+.pt ul{margin:0 0 .9rem;padding-inline-start:1.3rem;color:var(--steel);line-height:1.8;font-size:1.02rem}
+.pt li{margin-bottom:.4rem}
+.pt strong{color:var(--ice);font-weight:500}
 .none{color:var(--steel)}
 @media (max-width:640px){.msg{grid-template-columns:1fr}.au{flex-direction:row;justify-content:flex-start;border-inline-end:0;border-bottom:1px solid var(--line);padding:.8rem 1rem}.av{width:44px;height:44px;font-size:.95rem}}
 .side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);display:flex;flex-direction:column;gap:1rem}
@@ -125,7 +130,7 @@ html[dir=ltr] .ct{direction:ltr;text-align:left}
 </div>
 <main>
 <section class="hero">
-<h1 id="name" aria-label="AI BLOG">SI BLOG</h1>
+<h1 id="name" aria-label="AI BLOG">AI BLOG</h1>
 <p class="sub" data-i="sub"></p>
 </section>
 <section class="bl"><div class="feed" id="feed"></div><aside class="side"><div class="sh" data-i="proj"></div><div id="pj"></div></aside></section>
@@ -144,49 +149,11 @@ he:{adm:'מנהל',proj:'הפרויקטים',none:'אין עדיין פוסטי�
 en:{adm:'Admin',proj:'PROJECTS',none:'No posts yet.',home:'Home',c1:'To the AI blog',c2:'Discover more...',fx:'EFFECTS',f1:'Shatter',f2:'Flip',f3:"Don't panic",sub:'Posts about artificial intelligence.',cta:'Talk to me',go:'Open project',soon:'Link coming soon',btn:'עב'}
 };
 const posts=[
-{date:'2026-10-15',topic:'כללי',title:'ברוכים הבאים לבלוג הSI  של MONT BLANC',body:['כאן יופיעו פוסטים על בינה מלאכותית, קוד ויצירה.',]},
-{date:'2026-10-15',topic:'כללי',title:'האם ה-AI באמת עומד להחליף את האנושות? - מה אני חושב (אם זה חשוב לכם בכלל)',body:['בתקופה האחרונה (האחרונה?) נושא האינטליגנציה המלאכותית (AI) תופס מקום מרכזי בשיח. (באמת? את ממש כרגע נמצא בפורום כזה.) ההתפתחות המהירה של מערכות המעבדות נתונים, מנסחות טקסטים ומבצעות חישובים מורכבים בזמן קצר, מעלה אצל רבים את השאלה: האם המחשב יגיע ליום שבו יוכל להחליף את גורם החשיבה האנושי (שזה אנחנו, כן) ?
-
-יצאתי (אפילו לא לרגע אחד.) לבדוק את הנושא בצורה מושכלת ומנותחת, כדי להבין מה באמת עומד מאחורי הכלים הללו, מהן הנקודות החזקות שלהם, ובעיקר – מהן המגבלות המובנות שמונעות מהם להוות תחליף לאדם.
-
-כיצד פועלת המערכת בפועל?
-בבסיסה, אינטליגנציה מלאכותית היא כלי מתקדם לעיבוד נתונים. המערכות הללו אינן "חושבות" כפי שהאדם חושב, אלא פועלות על בסיס אלגוריתמים מתמטיים וסטטיסטיים:
-
-יכולת עיבוד אדירה: המחשב מסוגל לסרוק מאגרי מידע עצומים, לזהות בהם דפוסים, ולנסח פלטים (טקסט, חישוב או ניתוח) על פי ההסתברות הסטטיסטית הגבוהה ביותר.
-
-העדר תפיסה פנימית: המחשב אינו מבין את משמעות המילים שהוא מפיק. הוא אינו בעל מודעות, אין לו רגש, ואין לו הגיון ישר (Common Sense) או ידע המבוסס על ניסיון חיים מציאותי.
-
-כאשר מבינים שהטכנולוגיה היא בעיקרה מנוע סטטיסטי מתוחכם, מתבהר הפער היסודי בינה לבין תהליכי החשיבה והתבונה האנושית.
-
-המגבלות המהותיות של הטכנולוגיה
-ישנם כמה תחומי ליבה שבהם המחשב אינו מסוגל להחליף את האדם:
-
-שיקול דעת ואחריות:
-מערכת ממוחשבת יכולה להציע נתונים, לנתח אפשרויות או להציג תרחישים. אולם, קבלת החלטות במצבים מורכבים – כאלו הדורשים אחריות, שקילת ערכים, והבנת ההשלכות המעשיות של כל צעד – מופקדת תמיד בידי האדם בלבד.
-
-יצירתיות וחדשנות מקורית:
-כל התוצרים של הבינה המלאכותית מבוססים על עיבוד מחדש וחיבור של מידע קיים (סינתזה). המערכת אינה מסוגלת להבריק רעיון חדש לחלוטין יש מאין, אלא רק להרכיב באופן מתוחכם את מה שכבר הוטמע בתוכה.
-
-הבנת הקשרים עמוקים ותקשורת:
-בני אדם מתקשרים דרך הבנת הקשרים מורכבים, דקויות של שפה ושיקולים שאינם ניתנים לנוסחה מתמטית. המחשב מסוגל לתרגם מילים, אך לא להבין את עומק הכוונה שמאחוריהן.
-
-אוטומציה מול החלפה: מה באמת צפוי בעתיד?
-החשש מפני "החלפת האדם" נובע לרוב מבלבול בין החלפת הגורם החושב לבין אוטומציה של משימות טכניות.
-
-לאורך ההיסטוריה, כל כלי טכנולוגי חדש שנכנס לשימוש פטר את האדם מביצוע משימות טכניות או פיזיות מייגעות:
-
-המחשבון פטר את הצורך בחישובים ארוכים על הנייר.
-
-מעבד התמלילים החליף את מכונת הכתיבה.
-
-מנועי החיפוש החליפו את הדפדוף הידני באנציקלופדיות.
-
-באותו אופן, הבינה המלאכותית נועדה לבצע את העבודה הטכנית והחזרתית של סידור, ניתוח וארגון נתונים.
-
-לסיכום
-האינטליגנציה המלאכותית אינה מיועדת להחליף את האדם, אלא לשמש כלי עזר רב-עוצמה (ממש כמו בכל הסרטים של ראינו, כי זה פורום חרדי.) . היא מסוגלת לחסוך זמן יקר בביצוע פעולות טכניות מורכבות(איזה קטע... לא ידעתי את זה.) , אך הנהגת התהליכים, קבלת ההחלטות, החשיבה העמוקה ושיקול הדעת נותרים ויישארו תמיד בידיו של האדם. (פווויי, איזה נס.).',]}
+{date:'2026-10-15',topic:'בינה מלאכותית',title:"האם ה-AI באמת עומד להחליף את האנושות? - מה אני חושב (אם זה חשוב לכם בכלל)",body:["בתקופה האחרונה (האחרונה?) נושא האינטליגנציה המלאכותית (AI) תופס מקום מרכזי בשיח. (באמת? את ממש כרגע נמצא בפורום כזה.) ההתפתחות המהירה של מערכות המעבדות נתונים, מנסחות טקסטים ומבצעות חישובים מורכבים בזמן קצר, מעלה אצל רבים את השאלה: האם המחשב יגיע ליום שבו יוכל להחליף את גורם החשיבה האנושי (שזה אנחנו, כן) ?", "יצאתי (אפילו לא לרגע אחד.) לבדוק את הנושא בצורה מושכלת ומנותחת, כדי להבין מה באמת עומד מאחורי הכלים הללו, מהן הנקודות החזקות שלהם, ובעיקר – מהן המגבלות המובנות שמונעות מהם להוות תחליף לאדם.", "## כיצד פועלת המערכת בפועל?", "בבסיסה, אינטליגנציה מלאכותית היא כלי מתקדם לעיבוד נתונים. המערכות הללו אינן \"חושבות\" כפי שהאדם חושב, אלא פועלות על בסיס אלגוריתמים מתמטיים וסטטיסטיים:", "- **יכולת עיבוד אדירה:** המחשב מסוגל לסרוק מאגרי מידע עצומים, לזהות בהם דפוסים, ולנסח פלטים (טקסט, חישוב או ניתוח) על פי ההסתברות הסטטיסטית הגבוהה ביותר.", "- **העדר תפיסה פנימית:** המחשב אינו מבין את משמעות המילים שהוא מפיק. הוא אינו בעל מודעות, אין לו רגש, ואין לו הגיון ישר (Common Sense) או ידע המבוסס על ניסיון חיים מציאותי.", "כאשר מבינים שהטכנולוגיה היא בעיקרה מנוע סטטיסטי מתוחכם, מתבהר הפער היסודי בינה לבין תהליכי החשיבה והתבונה האנושית.", "## המגבלות המהותיות של הטכנולוגיה", "ישנם כמה תחומי ליבה שבהם המחשב אינו מסוגל להחליף את האדם:", "### שיקול דעת ואחריות", "מערכת ממוחשבת יכולה להציע נתונים, לנתח אפשרויות או להציג תרחישים. אולם, קבלת החלטות במצבים מורכבים – כאלו הדורשים אחריות, שקילת ערכים, והבנת ההשלכות המעשיות של כל צעד – מופקדת תמיד בידי האדם בלבד.", "### יצירתיות וחדשנות מקורית", "כל התוצרים של הבינה המלאכותית מבוססים על עיבוד מחדש וחיבור של מידע קיים (סינתזה). המערכת אינה מסוגלת להבריק רעיון חדש לחלוטין יש מאין, אלא רק להרכיב באופן מתוחכם את מה שכבר הוטמע בתוכה.", "### הבנת הקשרים עמוקים ותקשורת", "בני אדם מתקשרים דרך הבנת הקשרים מורכבים, דקויות של שפה ושיקולים שאינם ניתנים לנוסחה מתמטית. המחשב מסוגל לתרגם מילים, אך לא להבין את עומק הכוונה שמאחוריהן.", "## אוטומציה מול החלפה: מה באמת צפוי בעתיד?", "החשש מפני \"החלפת האדם\" נובע לרוב מבלבול בין החלפת הגורם החושב לבין אוטומציה של משימות טכניות.", "לאורך ההיסטוריה, כל כלי טכנולוגי חדש שנכנס לשימוש פטר את האדם מביצוע משימות טכניות או פיזיות מייגעות:", "- המחשבון פטר את הצורך בחישובים ארוכים על הנייר.", "- מעבד התמלילים החליף את מכונת הכתיבה.", "- מנועי החיפוש החליפו את הדפדוף הידני באנציקלופדיות.", "באותו אופן, הבינה המלאכותית נועדה לבצע את העבודה הטכנית והחזרתית של סידור, ניתוח וארגון נתונים.", "## לסיכום", "האינטליגנציה המלאכותית אינה מיועדת להחליף את האדם, אלא לשמש כלי עזר רב-עוצמה (ממש כמו בכל הסרטים של ראינו, כי זה פורום חרדי.) . היא מסוגלת לחסוך זמן יקר בביצוע פעולות טכניות מורכבות(איזה קטע... לא ידעתי את זה.) , אך הנהגת התהליכים, קבלת ההחלטות, החשיבה העמוקה ושיקול הדעת נותרים ויישארו תמיד בידיו של האדם. (פווויי, איזה נס.)"]},
+{date:'2026-10-15',topic:'כללי',title:'ברוכים הבאים לבלוג',body:['כאן יופיעו פוסטים על בינה מלאכותית, קוד ויצירה.','הפוסטים נכתבים ישירות בקוד, בלי שרת.']}
 ];
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=a=>{let o='',l=false;const k=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');for(const x of a){const li=x.startsWith('- ');if(l&&!li){o+='</ul>';l=false}if(li&&!l){o+='<ul>';l=true}o+=li?`<li>${k(x.slice(2))}</li>`:x.startsWith('### ')?`<h4>${k(x.slice(4))}</h4>`:x.startsWith('## ')?`<h3>${k(x.slice(3))}</h3>`:`<p>${k(x)}</p>`}return o+(l?'</ul>':'')};
 const items=[
 {t:{he:'CodeForge',en:'CodeForge'},d:{he:'עורך קוד מהיר ונקי שנבנה מאפס, עם הדגשת תחביר וממשק שמרגיש ככלי מקצועי. כולל חיבור לעוזר AI ולגיטהאב.',en:'A fast, clean code editor built from scratch, with syntax highlighting and a professional-grade interface. Connected to an AI assistant and GitHub.'},tags:{he:['עורך קוד','עוזר AI','GitHub'],en:['Code editor','AI assistant','GitHub']},u:'https://riangkkhh.github.io/CodeForge/',glow:'rgba(255,90,31,.55)',h:18,seed:3,kind:0},
 {t:{he:'CodeForge CSS Lab',en:'CodeForge CSS Lab'},d:{he:'סטודיו ויזואלי ליצירת קוד CSS מקצועי: משחקים, מעתיקים ושולחים לפרודקשן. כולל עוזר AI מתקדם.',en:'A visual studio for creating professional CSS code: play, copy, ship to production. Includes an advanced AI assistant.'},tags:{he:['CSS','סטודיו ויזואלי','עוזר AI'],en:['CSS','Visual studio','AI assistant']},u:'https://riangkkhh.github.io/CodeForge/CodeForgecss.html',glow:'rgba(255,79,139,.5)',h:340,seed:41,kind:2},
@@ -263,16 +230,16 @@ c.fillText(p.c,p.x,p.y)}}
 
 function render(){
 const L=lang==='he'?'he-IL':'en-GB',fe=document.getElementById('feed');
-const ps=[...posts].sort((a,b)=>b.date.localeCompare(a.date));
-const asc=[...posts].sort((a,b)=>a.date.localeCompare(b.date));
-fe.innerHTML=ps.length?ps.map(p=>{const au=esc(p.author||'MONT BLANC'),ini=au.split(' ').map(w=>w[0]).join('').slice(0,2),n=asc.indexOf(p)+1;return`<article class="msg rv${seen?' in':''}"><div class="au"><div class="av">${ini}</div><div class="an">${au}</div><div class="rl">${T[lang].adm}</div></div><div class="pb"><div class="ph"><span class="mt">${esc(p.topic)}</span><span><time datetime="${p.date}">${new Date(p.date+'T12:00:00').toLocaleDateString(L,{day:'numeric',month:'long',year:'numeric'})}</time> · <span class="pn">#${n}</span></span></div><div class="pt"><h2>${esc(p.title)}</h2>${p.body.map(x=>`<p>${esc(x)}</p>`).join('')}</div></div></article>`}).join(''):`<p class="none">${T[lang].none}</p>`;
+const ps=[...posts].sort((a,b)=>b.date.localeCompare(a.date)||posts.indexOf(b)-posts.indexOf(a));
+const asc=[...posts].sort((a,b)=>a.date.localeCompare(b.date)||posts.indexOf(a)-posts.indexOf(b));
+fe.innerHTML=ps.length?ps.map(p=>{const au=esc(p.author||'MONT BLANC'),ini=au.split(' ').map(w=>w[0]).join('').slice(0,2),n=asc.indexOf(p)+1;return`<article class="msg rv${seen?' in':''}"><div class="au"><div class="av">${ini}</div><div class="an">${au}</div><div class="rl">${T[lang].adm}</div></div><div class="pb"><div class="ph"><span class="mt">${esc(p.topic)}</span><span><time datetime="${p.date}">${new Date(p.date+'T12:00:00').toLocaleDateString(L,{day:'numeric',month:'long',year:'numeric'})}</time> · <span class="pn">#${n}</span></span></div><div class="pt"><h2>${esc(p.title)}</h2>${fmt(p.body)}</div></div></article>`}).join(''):`<p class="none">${T[lang].none}</p>`;
 document.getElementById('pj').innerHTML=items.map(p=>`<a class="cd r mini" href="${p.u}" target="_blank" rel="noopener" style="--cc:hsl(${p.h},90%,62%);--cg:hsla(${p.h},90%,60%,.16);--glow:${p.glow};--px:15%"><div class="cfp" data-h="${p.h}" data-seed="${p.seed}" data-kind="${p.kind}"><canvas class="fp" role="img" aria-label="Digital fingerprint"></canvas></div><div class="ct">${p.t[lang]}</div><svg class="ar" viewBox="0 0 100 60"><path d="M6 30H92M68 8l24 22-24 22"/></svg></a>`).join('');
 document.querySelectorAll('.rv:not(.in)').forEach(x=>io.observe(x));
 setupPrints()}
 
 const abcs={he:'אבגדהוזחטיכלמנסעפצקרשת',en:'abcdefghijklmnopqrstuvwxyz'};
 function scramble(el){const fin=el.dataset.f=el.textContent;const set=abcs[lang];let n=0;clearInterval(el._i);el._i=setInterval(()=>{el.textContent=[...fin].map((c,k)=>c===' '||c===':'||k<n?c:set[Math.random()*set.length|0]).join('');n+=.5;if(n>fin.length){el.textContent=fin;clearInterval(el._i)}},28)}
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');seen=true;const h=e.target.querySelector('[data-s]');if(h)scramble(h);io.unobserve(e.target)}}),{threshold:.35});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');seen=true;const h=e.target.querySelector('[data-s]');if(h)scramble(h);io.unobserve(e.target)}}),{threshold:.02});
 
 function setLang(l){
 lang=l;ls.set('mb-lang',l);
