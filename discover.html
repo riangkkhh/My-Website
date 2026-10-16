@@ -172,9 +172,9 @@ en:{to:'Open',adm:'Admin',proj:'PROJECTS',none:'No posts yet.',home:'Home',c1:'T
 const cats=[
 {hue:18,name:{he:'אתרים',en:'Websites'},cards:[
 {title:'CodeForge',desc:'עורך קוד מהיר ונקי שנבנה מאפס, עם הדגשת תחביר וממשק שמרגיש ככלי מקצועי. כולל חיבור לעוזר AI ולגיטהאב.',img:'',url:'https://riangkkhh.github.io/CodeForge/'},
-// {title:'אתר נוסף',desc:'עוד פירוט קצר. אפשר להוסיף כמה כרטיסיות שרוצים.',img:'',url:'#'}]},
+{title:'אתר נוסף',desc:'',img:'',url:'#'}]},
 {hue:195,name:{he:'תוספי כרום',en:'Chrome Extensions'},cards:[
-// {title:'תוסף לדוגמה',desc:'כאן כותבים מה התוסף עושה ולמי הוא מתאים.',img:'',url:'#'}]}
+{title:'תוסף לדוגמה',desc:'',img:'',url:'#'}]}
 ];
 const arches=[3,7,11,15,19].map((r,i)=>`<path d="M${24-r} 40V22a${r} ${r} 0 0 1 ${2*r} 0V40"${i%2?' stroke-dasharray="9 3"':''}/>`).join('');
 const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
